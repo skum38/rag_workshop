@@ -1,3 +1,5 @@
+📄 My RAG Chatbot – Brief Overview
+
 My RAG Chatbot is a document-aware conversational assistant built using Streamlit and LangChain. It allows users to upload a PDF and ask questions that are answered strictly from the document content, ensuring accuracy and preventing hallucinations.
 
 🔍 How it works

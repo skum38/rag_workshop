@@ -10,6 +10,7 @@ It allows users to upload a PDF and ask questions that are answered **strictly f
 - The uploaded PDF is **parsed, chunked, and indexed** using FAISS vector search.
 - User questions are answered using **Retrieval-Augmented Generation (RAG)**, where only the most relevant document sections are used as context.
 - The chatbot combines **adaptive retrieval**, **corrective self-checking**, and **document-only constraints** to ensure reliable and trustworthy responses.
+- Run -  pip install streamlit langchain langchain-community langchain-huggingface transformers langchain-openai sentence-transformers faiss-cpu pypdf
 
 ---
 

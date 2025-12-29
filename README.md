@@ -1,47 +1,69 @@
-📄 My RAG Chatbot – Brief Overview
+# 📄 My RAG Chatbot – Brief Overview
 
-My RAG Chatbot is a document-aware conversational assistant built using Streamlit and LangChain. It allows users to upload a PDF and ask questions that are answered strictly from the document content, ensuring accuracy and preventing hallucinations.
+My RAG Chatbot is a document-aware conversational assistant built using **Streamlit** and **LangChain**.  
+It allows users to upload a PDF and ask questions that are answered **strictly from the document content**, ensuring accuracy and preventing hallucinations.
 
-🔍 How it works
+---
 
-The uploaded PDF is parsed, chunked, and indexed using FAISS vector search.
+## 🔍 How It Works
 
-User questions are answered using Retrieval-Augmented Generation (RAG), where only the most relevant document sections are used as context.
+- The uploaded PDF is **parsed, chunked, and indexed** using FAISS vector search.
+- User questions are answered using **Retrieval-Augmented Generation (RAG)**, where only the most relevant document sections are used as context.
+- The chatbot combines **adaptive retrieval**, **corrective self-checking**, and **document-only constraints** to ensure reliable and trustworthy responses.
 
-The chatbot includes adaptive retrieval, corrective self-checking, and document-only constraints to ensure reliable responses.
+---
 
-✨ Key Features
+## ✨ Key Features
 
-📄 PDF-based Q&A – Answers are grounded in the uploaded document
+- 📄 **PDF-based Q&A**  
+  Answers are fully grounded in the uploaded document.
 
-💡 Auto-generated suggested questions – Dynamically created from document content
+- 💡 **Auto-generated Suggested Questions**  
+  Questions are dynamically generated from document content only.
 
-🧠 Adaptive RAG – Retrieves the most relevant sections per question
+- 🧠 **Adaptive RAG**  
+  Retrieves the most relevant document sections for each query.
 
-🛡️ Corrective self-check – Flags answers not fully supported by the document
+- 🛡️ **Corrective Self-Check**  
+  Flags answers that are not fully supported by the document.
 
-🔄 Reset & re-upload support – Clean session management
+- 🔄 **Reset & Re-upload Support**  
+  Clean session management for multiple documents.
 
-🧾 Minimal chat history view – Shows the most recent interactions for clarity
+- 🧾 **Minimal Chat History View**  
+  Displays only the most recent interactions for clarity.
 
-🎯 Use Cases
+---
 
-Reading and understanding books or articles
+## 🎯 Use Cases
 
-Analyzing policy or technical documents
+- Reading and understanding books or articles  
+- Analyzing policy or technical documents  
+- Educational content exploration  
+- Fast knowledge extraction from large PDFs  
 
-Educational content exploration
+---
 
-Fast knowledge extraction from large PDFs
+## 🏗️ Tech Stack
 
-🏗️ Tech Stack
+- **Frontend:** Streamlit  
+- **LLMs:** OpenAI (GPT-4o-mini)  
+- **Embeddings:** Sentence-Transformers (MiniLM)  
+- **Vector Store:** FAISS  
+- **Framework:** LangChain  
 
-Frontend: Streamlit
+---
 
-LLMs: OpenAI (GPT-4o-mini)
+## 📌 Design Philosophy
 
-Embeddings: Sentence-Transformers (MiniLM)
+- Accuracy over creativity  
+- No hallucinated answers  
+- Document-first reasoning  
+- Simple, clean, and explainable RAG pipeline  
 
-Vector Store: FAISS
+---
 
-Framework: LangChain
+## 📄 License
+
+This project is intended for learning, experimentation, and demonstrations.  
+You are free to extend and customize it for your own use.

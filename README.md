@@ -1,63 +1,45 @@
-# 📄 My RAG Chatbot (Adaptive + Corrective + Self)
+My RAG Chatbot is a document-aware conversational assistant built using Streamlit and LangChain. It allows users to upload a PDF and ask questions that are answered strictly from the document content, ensuring accuracy and preventing hallucinations.
 
-My RAG Chatbot is a document-aware conversational assistant built using **Streamlit** and **LangChain**.  
-It allows users to upload a PDF and ask questions that are answered **strictly from the document content**, ensuring accuracy and minimizing hallucinations.
+🔍 How it works
 
----
+The uploaded PDF is parsed, chunked, and indexed using FAISS vector search.
 
-## 🚀 Features
+User questions are answered using Retrieval-Augmented Generation (RAG), where only the most relevant document sections are used as context.
 
-- 📄 **PDF Upload & Indexing**  
-  Upload any PDF document and convert it into a searchable knowledge base.
+The chatbot includes adaptive retrieval, corrective self-checking, and document-only constraints to ensure reliable responses.
 
-- 🧠 **Adaptive Retrieval (RAG)**  
-  Retrieves only the most relevant document chunks for each question using vector similarity search.
+✨ Key Features
 
-- 🛡️ **Corrective Self-Check**  
-  Automatically validates answers against the retrieved document context and warns when an answer is not fully supported.
+📄 PDF-based Q&A – Answers are grounded in the uploaded document
 
-- 💡 **Document-Only Suggested Questions**  
-  Dynamically generates relevant, factual questions based solely on the document content.
+💡 Auto-generated suggested questions – Dynamically created from document content
 
-- 🔄 **Session Reset & Re-upload**  
-  Easily clear the chat history and upload a new document without restarting the app.
+🧠 Adaptive RAG – Retrieves the most relevant sections per question
 
-- 🧾 **Clean Chat History**  
-  Displays only the most recent interactions for a focused user experience.
+🛡️ Corrective self-check – Flags answers not fully supported by the document
 
----
+🔄 Reset & re-upload support – Clean session management
 
-## 🧠 How It Works
+🧾 Minimal chat history view – Shows the most recent interactions for clarity
 
-1. **PDF Loading**  
-   The uploaded PDF is read and split into overlapping text chunks.
+🎯 Use Cases
 
-2. **Vector Indexing**  
-   Chunks are converted into embeddings and stored in a FAISS vector database.
+Reading and understanding books or articles
 
-3. **Question Answering (RAG)**  
-   User questions retrieve the most relevant chunks, which are passed to the LLM for answering.
+Analyzing policy or technical documents
 
-4. **Answer Validation**  
-   A self-check step verifies that the generated answer is supported by the document.
+Educational content exploration
 
-5. **Suggested Questions Refresh**  
-   After each answer, new document-based questions are generated.
+Fast knowledge extraction from large PDFs
 
----
+🏗️ Tech Stack
 
-## 🏗️ Tech Stack
+Frontend: Streamlit
 
-- **UI Framework:** Streamlit  
-- **LLM:** OpenAI (GPT-4o-mini)  
-- **Embeddings:** Sentence-Transformers (`all-MiniLM-L6-v2`)  
-- **Vector Store:** FAISS  
-- **Framework:** LangChain  
+LLMs: OpenAI (GPT-4o-mini)
 
----
+Embeddings: Sentence-Transformers (MiniLM)
 
-## 📦 Installation
+Vector Store: FAISS
 
-```bash
-pip install streamlit langchain langchain-community langchain-huggingface \
-langchain-openai sentence-transformers faiss-cpu pypdf python-dotenv
+Framework: LangChain

@@ -26,8 +26,8 @@ load_dotenv()
 # -------------------------------------------------
 # Page setup
 # -------------------------------------------------
-st.set_page_config(page_title="📄 My RAG Chatbot", layout="wide")
-st.title("📄 RAG Chatbot (Adaptive + Corrective + Self)")
+st.set_page_config(page_title=" My RAG Chatbot (Adaptive + Corrective + Self)", layout="wide")
+st.title(" My RAG Chatbot ")
 
 # -------------------------------------------------
 # Session State
@@ -40,6 +40,8 @@ st.session_state.setdefault("pending_question", None)
 st.session_state.setdefault("pdf_indexed", False)
 st.session_state.setdefault("uploader_key", 0)
 st.session_state.setdefault("upload_status", "Awaiting PDF upload")
+st.session_state.setdefault("first_question_done", False)
+
 
 # -------------------------------------------------
 # Sidebar Controls
@@ -224,7 +226,7 @@ if st.session_state.vectorstore:
         for i, q in enumerate(st.session_state.suggested_questions):
             if st.button(q, key=f"sug_{i}"):
                 st.session_state.pending_question = q
-                st.rerun()
+                
 
     # Chat
     with col1:
@@ -236,17 +238,18 @@ if st.session_state.vectorstore:
         if question:
             answer, docs = rag_answer(question)
             st.session_state.asked_questions.add(question)
-
-            # Latest first
             st.session_state.messages.insert(0, ("assistant", answer))
             st.session_state.messages.insert(0, ("user", question))
-
-            # Refresh suggestions
             st.session_state.suggested_questions = generate_suggested_questions_from_docs(
                 docs, st.session_state.asked_questions
             )
 
-            st.rerun()
+            # 🔒 Prevent UI glitch on first interaction
+            if st.session_state.first_question_done:
+                st.rerun()
+            else:
+                st.session_state.first_question_done = True
+
 
         # Show only last 5 chat histories (10 messages)
         for role, msg in st.session_state.messages[:10]:

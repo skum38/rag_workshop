@@ -68,3 +68,6 @@ It allows users to upload a PDF and ask questions that are answered **strictly f
 
 This project is intended for learning, experimentation, and demonstrations.  
 You are free to extend and customize it for your own use.
+
+<img width="1080" height="602" alt="image" src="https://github.com/user-attachments/assets/879159e9-5b2a-42e4-8345-478cfaa26011" />
+

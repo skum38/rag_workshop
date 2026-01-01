@@ -10,6 +10,8 @@ It allows users to upload a PDF and ask questions that are answered **strictly f
 - The chatbot combines **adaptive retrieval**, **corrective self-checking**, and **document-only constraints** to ensure reliable and trustworthy responses.
 - Run -  pip install streamlit langchain langchain-community langchain-huggingface transformers langchain-openai sentence-transformers faiss-cpu pypdf
 - **streamlit run '.\rag_chatbot_final.py'**
+- **(or)**
+-  **streamlit run '.\app.py'**
 
 ---
 
